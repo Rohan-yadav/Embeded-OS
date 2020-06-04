@@ -13,3 +13,39 @@ dispArray(s, N); //function for print array after sorting.
 printf("bsort program complete.\n\n");
 return EXIT_SUCCESS;
 }
+
+#include "../my_func"
+#include<stdio.h>
+#include<stdlib.h>
+/*
+* function to print out the array contents
+*/
+void dispArray(const int *s, size_t N) // This function is printing array elements
+{
+for (size_t i=0; i != N; ++i) // staring of for loop using size_t datatype variable
+{
+printf("%d ",s[i]);
+}
+printf("\n");
+return;
+}
+/*
+* function to sort the array
+*/
+void bsort(int *s, size_t N)
+{
+int temp; //temp variable for storing value of array temporary
+for(a = 0; a < N-1; a++)
+{
+for(b = 0;b < N-a-1; b++)
+{
+if (s[b] > s[b+1])
+{
+temp = s[b];
+s[b] = s[b+1];
+s[b+1] = temp;
+}
+}
+}
+return;
+}
