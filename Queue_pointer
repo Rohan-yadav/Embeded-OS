@@ -1,0 +1,42 @@
+/*
+ * proj_queue.c
+ *
+ *  Created on: Jun. 17, 2020
+ *      Author: Rohan
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include "queue.h"
+
+int main()
+{
+	/* declare and initialize variables */
+	queue_t queue;
+	queue.head = 0;
+	queue.tail = 0;
+
+	int loadarr[] = {52, -29, 36, 1154, 72, 0, 68, 44, 33, 59};
+	size_t N = sizeof(loadarr)/sizeof(int); //size of N wiil be number of element
+
+	/* load queue */
+	size_t i;
+	for (i = 0; i != N; ++i)
+	{
+		printf("queue.tail = %d, ", queue.tail);
+		enqueue(&queue, loadarr[i]);
+		printf("pushing %d\n", loadarr[i]);
+	}
+printf("\nEnnd of array element\n***********************\nnow popping wil start\n");
+	/* Printing element of array */
+	int x;
+	for (i = 0; i != N; ++i)
+		{
+		printf("queue.head = %d, ", queue.head);
+		x = dequeue(&queue);
+		printf("popping %d\n", x);
+	}
+	/* test error function */
+	//x = dequeue(&stack); /* comment this out to avoid error */
+	return EXIT_SUCCESS;
+}
