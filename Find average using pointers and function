@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+float findaverage(float *data, size_t N); //function declaration
+
+int main()
+{
+  float data[] = {2.3,4,5,7,1.2};  //declared as float data type
+  size_t N = sizeof(data)/sizeof(float);  //N = 5(number of element in array)
+
+  printf("Average of data is: %f",findaverage(data,N)); //calling function
+
+  return EXIT_SUCCESS;
+}
+
+float findaverage(float *data, size_t N){   //uses array pointer in argument.
+
+	int i;
+	float sum=0,avg;
+	for(i=0;i<=N;i++){
+		sum += data[i];  //sum=sum+data[i]
+	}
+	avg = sum/N;
+	return avg;
+
+}
