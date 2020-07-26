@@ -1,0 +1,66 @@
+*
+ * Program.cpp
+ *
+ *  Created on: Jul. 26, 2020
+ *      Author: rohan
+ */
+
+
+
+#include <iostream>
+#include <vector>
+#include <bits/stdc++.h>
+
+using std::vector;
+using std::cout;
+using std::endl;
+using std::cin;
+using std::nth_element;
+
+
+/*
+ * main code begins
+ */
+int main()
+{
+	/* store integers in a vector from standard input */
+	vector<int> num;	// num is array
+	int token; 			// our container content variable
+	cout << "Please enter some integers, followed by Aplhabetical character:" << endl;
+	while (cin >> token) // loop exits when user enters other then numbers.
+	{
+		num.push_back(token);
+	}
+	cout << endl << endl;
+
+	/* print integers from vector */
+	cout << "Your integers are:" << endl;
+	for (vector<int>::size_type j = 0; j != num.size(); ++j)
+	{
+		cout << num[j] << endl;
+	}
+	cout << endl;
+
+	// Find the min element
+	    cout << "\nMin Element = " << *min_element(num.begin(), num.end());
+
+    // Find the max element
+	        cout << "\nMax Element = " << *max_element(num.begin(), num.end()) << endl;
+
+	//Find median:
+	        nth_element(num.begin(), num.begin() + num.size()/2, num.end());
+	            cout << "The median is " << num[num.size()/2] << '\n';
+
+
+	//Sort array in ascending order:
+	        //int n = sizeof(num)/sizeof(num[0]);
+	        sort(num.begin(),num.end());
+	        cout << "Your integers after sorting are:" << endl;
+	        	for (vector<int>::size_type j = 0; j != num.size(); ++j)
+	        	{
+	        		cout << num[j] << endl;
+	        	}
+	        	cout << endl;
+
+
+}
