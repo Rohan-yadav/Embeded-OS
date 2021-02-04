@@ -28,6 +28,7 @@ int main(void)
 		usleep(1000000);
 		printf("\r");
 	}
+	
 
 	printf("test service shutting down! \n");
 	fclose(fp);
